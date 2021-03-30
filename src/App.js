@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import {ThemeProvider , createMuiTheme} from '@material-ui/core/styles';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import 'fontsource-roboto';
+
+import MainUserPage from "./panels/MainUserPage";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#1676FF'
+        },
+        background: {
+            default: '#F6F9FD',
+            paper: '#fff'
+        }
+    }
+});
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider  theme={theme}>
+            <CssBaseline />
+            <Switch>
+                <Route exact path="/" render={() => <MainUserPage/>}/>
+            </Switch>
+        </ThemeProvider >
+    );
 }
 
 export default App;
