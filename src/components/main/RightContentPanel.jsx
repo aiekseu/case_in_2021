@@ -4,7 +4,7 @@ import {
     Badge,
     Box,
     Button,
-    Grid,
+    Grid, Hidden,
     IconButton,
     makeStyles,
     Paper,
@@ -119,28 +119,34 @@ const RightContentPanel = () => {
         <Box className={classes.root}>
             <Grid container direction='column'>
                 <Grid item style={{marginTop: 8}}>
-                    <Grid container direction='row' justify="flex-end" alignItems="center">
-                        <IconButton aria-label="show 11 new notifications" color="#4D4D4D">
-                            <Badge badgeContent={11} color="secondary">
-                                <NotificationsNoneIcon/>
-                            </Badge>
-                        </IconButton>
-                        <Typography className={classes.name}>
-                            Мария Ким
-                        </Typography>
-                        <Avatar alt="Мария Ким" className={classes.small}/>
-                        <ExpandMoreIcon className={classes.moreButton}/>
-                    </Grid>
+                    <Hidden smDown>
+                        <Grid container direction='row' justify="flex-end" alignItems="center">
+                            <IconButton aria-label="show 11 new notifications" color="#4D4D4D">
+                                <Badge badgeContent={11} color="secondary">
+                                    <NotificationsNoneIcon/>
+                                </Badge>
+                            </IconButton>
+                            <Typography className={classes.name}>
+                                Мария Ким
+                            </Typography>
+                            <Avatar alt="Мария Ким" className={classes.small}/>
+                            <ExpandMoreIcon className={classes.moreButton}/>
+                        </Grid>
+                    </Hidden>
+
                 </Grid>
 
-                <Grid item className={classes.section} >
-                    <Box borderRadius={16} className={(calendarIsHidden) ? classes.calendarBox : classes.calendarBoxClosed}>
+                <Grid item className={classes.section}>
+                    <Box borderRadius={16}
+                         className={(calendarIsHidden) ? classes.calendarBox : classes.calendarBoxClosed}>
                         <Grid container direction='row' justify="space-between" alignItems="center">
                             <Typography variant='h5' className={classes.title}>
                                 Календарь
                             </Typography>
-                            <IconButton style={{padding: 4}} onClick={() => {setCalendarIsHidden(!calendarIsHidden)}}>
-                                {(calendarIsHidden) ? <ExpandLessIcon /> : <ExpandMoreIcon/>}
+                            <IconButton style={{padding: 4}} onClick={() => {
+                                setCalendarIsHidden(!calendarIsHidden)
+                            }}>
+                                {(calendarIsHidden) ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                             </IconButton>
                         </Grid>
                         {calendarIsHidden &&
@@ -163,7 +169,7 @@ const RightContentPanel = () => {
                         </Grid>
                         <Box borderRadius={16} className={classes.mentorBox}>
                             <Grid item>
-                                <MentorsList />
+                                <MentorsList/>
                             </Grid>
                         </Box>
                     </Grid>

@@ -4,6 +4,7 @@ import {Grid, Hidden, makeStyles} from "@material-ui/core";
 import MainContent from "../components/main/MainContent";
 import RightContentPanel from "../components/main/RightContentPanel";
 import LeftNavigationPanel_new from "../components/main/LeftNavigationPanel_new";
+import Schedule from "../components/schedule/Schedule";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,12 +34,8 @@ const MainUserPage = () => {
                     </Grid>
                 </Hidden>
 
-                <Grid item xs={12} sm={12} md={7}>
-                    <MainContent/>
-                </Grid>
-
-                <Grid item xs={12} sm={12} md={3}>
-                    <RightContentPanel/>
+                <Grid item xs={12} sm={12} md={10}>
+                    <Schedule/>
                 </Grid>
             </Grid>
         </div>

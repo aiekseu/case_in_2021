@@ -19,11 +19,9 @@ import logo from '../../images/logo.png'
 
 import SearchIcon from '@material-ui/icons/Search';
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import StoriesList from "./StoriesList";
-import ProgressesList from "./ProgressesList";
-import FilesList from "./FilesList";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ActivitiesFilters from "./ActivitiesFilters";
 
 
 const ViewAllButton = withStyles({
@@ -154,18 +152,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const MainContent = () => {
+const Schedule = () => {
 
     const classes = useStyles();
-
 
     return (
         <Box borderRadius={40} className={classes.root}>
             <Grid container direction='column'>
 
                 <Grid item style={{marginTop: 8}}>
-                    <Hidden mdUp>
-                        <Grid container direction='row' justify="flex-end" alignItems="center">
+                    <Grid container direction='row' justify="space-around" alignItems="center">
+                        <Grid item xs={12} sm={8} md={8}>
+                            <Box borderRadius={15} className={classes.searchBar}>
+                                <Box borderRadius={15} className={classes.iconBG}>
+                                    <SearchIcon className={classes.icon}/>
+                                </Box>
+                                <InputBase
+                                    className={classes.searchInput}
+                                    classes={{root: classes.searchShape}}
+                                    borderRadius={15}
+                                    placeholder="Поиск"
+                                />
+                            </Box>
+                        </Grid>
+
+                        <Grid item container direction='row' justify="flex-end" alignItems="center" xs={12} sm={4} md={4}>
                             <IconButton aria-label="show 11 new notifications" color="#4D4D4D">
                                 <Badge badgeContent={11} color="secondary">
                                     <NotificationsNoneIcon/>
@@ -177,86 +188,23 @@ const MainContent = () => {
                             <Avatar alt="Мария Ким" className={classes.small}/>
                             <ExpandMoreIcon className={classes.moreButton}/>
                         </Grid>
-                    </Hidden>
-                </Grid>
-
-                <Grid item>
-                    <Box borderRadius={15} className={classes.searchBar}>
-                        <Box borderRadius={15} className={classes.iconBG}>
-                            <SearchIcon className={classes.icon}/>
-                        </Box>
-                        <InputBase
-                            className={classes.searchInput}
-                            classes={{root: classes.searchShape}}
-                            borderRadius={15}
-                            placeholder="Поиск"
-                        />
-                    </Box>
+                    </Grid>
                 </Grid>
 
                 <Grid item className={classes.stories}>
                     <Grid container direction='row' justify="space-between" alignItems="center">
-                        <Typography variant='h5' className={classes.title}>
-                            Истории
+                        <Typography variant='h4' className={classes.title}>
+                            Мероприятия
                         </Typography>
-                        <ViewAllButton style={{marginRight: 48}}>
-                            Все <NavigateNextIcon fontSize='small' style={{color: '#4D4D4D'}}/>
-                        </ViewAllButton>
                     </Grid>
+
 
                     <Grid item style={{marginTop: 12}}>
-                        <StoriesList/>
+                        <ActivitiesFilters/>
                     </Grid>
                 </Grid>
 
-                <Grid item>
-                    <Box borderRadius={20} className={classes.greetingsCard}>
-                        <Grid container direction='row'>
-                            <Grid item container direction='column' justify="space-evenly" xs={12} md={9}>
-                                <Typography variant='h4' className={classes.hello}>
-                                    Здравствуй, Мария!
-                                </Typography>
-                                <Typography variant='subtitle1' className={classes.hello2}>
-                                    Добро пожаловать в систему для адаптации новых сотрудников в компании РОСАТОМ.
-                                </Typography>
-                                <ChangeButton className={classes.changeButton}>
-                                    Изменить
-                                </ChangeButton>
-                            </Grid>
 
-                            <Hidden mdDown>
-                                <Grid item xs={3}>
-                                    <img src={logo} className={classes.logo}/>
-                                </Grid>
-                            </Hidden>
-                        </Grid>
-                    </Box>
-                </Grid>
-
-                <Grid item className={classes.progress}>
-                    <Grid container direction='row' justify="space-between" alignItems="center">
-                        <Typography variant='h5' className={classes.title}>
-                            Что-то важное
-                        </Typography>
-                        <ViewAllButton style={{marginRight: 48}}>
-                            Все <NavigateNextIcon fontSize='small' style={{color: '#4D4D4D'}}/>
-                        </ViewAllButton>
-                    </Grid>
-
-                    <Grid item style={{marginTop: 12}}>
-                        <ProgressesList/>
-                    </Grid>
-                </Grid>
-
-                <Grid item className={classes.files}>
-                    <Typography variant='h5' className={classes.title}>
-                        Важные файлы
-                    </Typography>
-
-                    <Grid item style={{marginTop: 12}}>
-                        <FilesList/>
-                    </Grid>
-                </Grid>
 
 
             </Grid>
@@ -265,4 +213,4 @@ const MainContent = () => {
 
 }
 
-export default MainContent
+export default Schedule

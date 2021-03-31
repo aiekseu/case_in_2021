@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import 'fontsource-roboto';
 
 import MainUserPage from "./panels/MainUserPage";
+import SchedulePage from "./panels/SchedulePage";
 
 const theme = createMuiTheme({
     palette: {
@@ -23,6 +24,7 @@ function App() {
             <CssBaseline />
             <Switch>
                 <Route exact path="/" render={() => <MainUserPage/>}/>
+                <Route exact path="/schedule" render={() => <SchedulePage />}/>
             </Switch>
         </ThemeProvider >
     );
