@@ -60,7 +60,7 @@ const ChangeButton = withStyles({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: '100%',
+        height: '100vh',
         background: "#fff",
         paddingLeft: 56,
         paddingRight: 56
@@ -148,6 +148,13 @@ const useStyles = makeStyles((theme) => ({
     },
     files: {
         marginTop: 24
+    },
+    activity: {
+        width: 200,
+        height: 170
+    },
+    activitiesGrid: {
+        marginTop: 16
     }
 }));
 
@@ -176,7 +183,8 @@ const Schedule = () => {
                             </Box>
                         </Grid>
 
-                        <Grid item container direction='row' justify="flex-end" alignItems="center" xs={12} sm={4} md={4}>
+                        <Grid item container direction='row' justify="flex-end" alignItems="center" xs={12} sm={4}
+                              md={4}>
                             <IconButton aria-label="show 11 new notifications" color="#4D4D4D">
                                 <Badge badgeContent={11} color="secondary">
                                     <NotificationsNoneIcon/>
@@ -204,7 +212,47 @@ const Schedule = () => {
                     </Grid>
                 </Grid>
 
+                <Grid item container direction='row' xs={12} spacing={2} className={classes.activitiesGrid}>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
+                    <Grid item>
+                        <Box borderRadius={12} borderColor='#DDDDDD' border={2} className={classes.activity}/>
+                    </Grid>
 
+
+
+                </Grid>
 
 
             </Grid>
