@@ -7,7 +7,10 @@ const useStyles = makeStyles((theme) => ({
         height: 130,
         width: 115
     },
-
+    backdrop: {
+        zIndex: theme.zIndex.drawer + 1,
+        color: '#fff',
+    },
 }));
 
 
@@ -43,6 +46,7 @@ const StoriesList = () => {
                     <Box borderRadius={22} className={classes.storiesCard} style={{background: 'linear-gradient(15deg, rgba(1,135,246,1) 0%, rgba(62,166,251,1) 100%)'}}/>
                 </Hidden>
             </Grid>
+
 
             <Backdrop className={classes.backdrop} open={isShown} onClick={() => {setIsShown(!isShown)}}>
                 <Stories
