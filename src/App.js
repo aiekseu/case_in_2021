@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import 'fontsource-roboto';
 
 import MainUserPage from "./panels/MainUserPage";
+import LoginPage from "./panels/LoginPage";
 
 const theme = createMuiTheme({
     palette: {
@@ -22,7 +23,7 @@ function App() {
         <ThemeProvider  theme={theme}>
             <CssBaseline />
             <Switch>
-                <Route exact path="/" render={() => <MainUserPage/>}/>
+                <Route exact path="/" render={() => <LoginPage/>}/>
             </Switch>
         </ThemeProvider >
     );
