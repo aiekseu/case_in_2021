@@ -1,4 +1,5 @@
 import {Grid, Hidden, makeStyles} from "@material-ui/core";
+import React from "react";
 
 
 import MainContent from "../components/main/MainContent";
@@ -33,7 +34,7 @@ const MainUserPage = () => {
                     </Grid>
                 </Hidden>
 
-                <Grid item xs={12} sm={12} md={7} >
+                <Grid item xs={12} sm={12} md={7}>
                     <MainContent/>
                 </Grid>
 
