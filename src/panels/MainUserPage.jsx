@@ -1,4 +1,5 @@
 import {Grid, Hidden, makeStyles} from "@material-ui/core";
+import React from "react";
 
 
 import MainContent from "../components/main/MainContent";
