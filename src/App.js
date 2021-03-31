@@ -5,6 +5,7 @@ import 'fontsource-roboto';
 
 import MainUserPage from "./panels/MainUserPage";
 import LoginPage from "./panels/LoginPage";
+import SchedulePage from "./panels/SchedulePage";
 
 const theme = createMuiTheme({
     palette: {
@@ -24,6 +25,8 @@ function App() {
             <CssBaseline />
             <Switch>
                 <Route exact path="/" render={() => <LoginPage/>}/>
+                <Route exact path="/main" render={() => <MainUserPage/>}/>
+                <Route exact path="/schedule" render={() => <SchedulePage/>}/>
             </Switch>
         </ThemeProvider >
     );

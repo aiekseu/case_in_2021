@@ -4,58 +4,18 @@ import {
     Box,
     Button,
     Grid,
-    Hidden,
     IconButton,
     InputBase,
     makeStyles,
-    Paper,
     Typography,
     withStyles
 } from "@material-ui/core";
-import {borders} from '@material-ui/system';
 
-import mulish from "@fontsource/mulish"
-import logo from '../../images/logo.png'
 
 import SearchIcon from '@material-ui/icons/Search';
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ActivitiesFilters from "./ActivitiesFilters";
-
-
-const ViewAllButton = withStyles({
-    root: {
-        boxShadow: 'none',
-        textTransform: 'none',
-        fontSize: 16,
-        fontWeight: 300,
-        padding: '4px 12px',
-        border: '0px solid',
-        lineHeight: 1.5,
-        backgroundColor: '#EFF3FB',
-        borderRadius: "9px 9px 9px 9px",
-        borderColor: '#EFF3FB',
-    },
-})(Button);
-
-const ChangeButton = withStyles({
-    root: {
-        boxShadow: 'none',
-        textTransform: 'none',
-        maxWidth: 140,
-        height: 40,
-        fontSize: 16,
-        fontWeight: 400,
-        color: '#fff',
-        padding: '4px 12px',
-        border: '0px solid',
-        lineHeight: 1.5,
-        backgroundColor: '#6672FB',
-        borderRadius: "8px 8px 8px 8px",
-        borderColor: '#6672FB',
-    },
-})(Button);
 
 
 const useStyles = makeStyles((theme) => ({

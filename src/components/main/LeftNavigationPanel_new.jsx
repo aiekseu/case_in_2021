@@ -6,6 +6,7 @@ import "@fontsource/mulish"
 
 import CloudQueueIcon from '@material-ui/icons/CloudQueue';
 import {Typography} from "@material-ui/core";
+import {useHistory} from "react-router";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,18 +53,28 @@ const useStyles = makeStyles((theme) => ({
 const LeftNavigationPanel_new = () => {
     const classes = useStyles();
 
+    const history = useHistory();
+
+    const toMain = () => {
+        history.push('/main')
+    }
+
+    const toSchedule = () => {
+        history.push('/schedule')
+    }
+
     return (
         <div className={classes.color}>
             <CssBaseline/>
             <Typography className={classes.appName}>ROSATOM</Typography>
             <List>
-                <ListItem button key='main' >
+                <ListItem button onClick={toMain} key='main' >
                     <ListItemIcon className={classes.icon}><CloudQueueIcon /></ListItemIcon>
                     <ListItemText primary='Главная' className={classes.text} />
                 </ListItem>
-                <ListItem button key='main' >
+                <ListItem button onClick={toSchedule} key='main'>
                     <ListItemIcon className={classes.icon}><CloudQueueIcon /></ListItemIcon>
-                    <ListItemText primary='Главная' className={classes.text_notActive}/>
+                    <ListItemText primary='Мероприятия' className={classes.text_notActive}/>
                 </ListItem>
                 <ListItem button key='main'>
                     <ListItemIcon className={classes.icon}><CloudQueueIcon /></ListItemIcon>

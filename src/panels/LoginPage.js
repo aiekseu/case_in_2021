@@ -4,6 +4,7 @@ import ClearLogo from '../images/clearLogo.png'
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import {useHistory} from "react-router";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
 const LoginPage = () => {
 
     const classes = useStyles();
+    const history = useHistory()
+
+    const handleLogin = () => {
+        history.push('/main')
+    }
 
     return (
         <div className={classes.bg}>
@@ -107,7 +113,7 @@ const LoginPage = () => {
                         </Grid>
                         <Box mt={4}/>
                         <Grid item xs={12}>
-                            <Button variant="contained" fullWidth color="primary" className={classes.btn}>
+                            <Button variant="contained" onClick={handleLogin} fullWidth color="primary" className={classes.btn}>
                                 Войти
                             </Button>
                         </Grid>
